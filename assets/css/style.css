@@ -566,11 +566,11 @@ small {
   background-color: #00695c !important;
 } */
 
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
   #experience .container {
     width: 860px;
   }
-}
+}*/
 
 @media (max-width: 1360px) {
   .card ul li {
