@@ -28,6 +28,25 @@
   right: 0;
 }
 
+@import url(http://jpswalsh.github.io/academicons/css/academicons.css);
+.icon-btn {
+  margin-left: auto;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 70px;
+  border-radius: 45px;
+  display: inline-block;
+  margin: 4px;
+}
+
+.scholar {
+  color: black
+}
+
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 .social {
   margin: 0 auto;
