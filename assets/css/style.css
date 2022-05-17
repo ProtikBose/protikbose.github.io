@@ -98,6 +98,10 @@
   background-color: black;
 }
 
+.scholar:hover {
+  background-color: green;
+}
+
 /* Buttons - Read Me, Contact Us */
 
 .readme {
