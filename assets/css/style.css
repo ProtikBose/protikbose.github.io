@@ -11,7 +11,7 @@
   /* background-size: cover;  */
   margin: -31px; 
   margin-left:-7px;
-  border: 6px solid rgba(0, 77, 64, 0.4); 
+  border: 6px solid #0089ec; 
   border-radius: 50% !important;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .scholar {
-  color: black
+  color: black;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
@@ -67,14 +67,22 @@
   border-radius: 45px;
   display: inline-block;
   margin: 4px;
+  border: 2px solid #24305e;
 }
 
 .github {
   color: black;
+  border: 2px solid black;
+}
+
+.twitter {
+  color: #00acee;
+  border: 2px solid #24305e;
 }
 
 .linkedin {
   color: #0077b5;
+  border: 2px solid #24305e;
 }
 
 .angellist {
@@ -88,6 +96,7 @@
 
 .linkedin:hover {
   background-color: #0077b5;
+  border: 2px solid #24305e;
 }
 
 .angellist:hover {
@@ -102,14 +111,18 @@
   background-color: green;
 }
 
+.twitter:hover {
+  color: #00acee;
+}
+
 /* Buttons - Read Me, Contact Us */
 
 .readme {
   position: relative;
   padding: 11px 35px;
   background: #fff;
-  color: #00796b;
-  border: 2px solid #fff;
+  color: #24305e;
+  border: 2px solid #24305e;
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 1px;
@@ -118,17 +131,17 @@
   -webkit-border-radius: 5px;
 }
 
-/* .readme:hover{
+.readme:hover{
   color: white;
   background-color: #00796b;
-} */
+}
 
 .contactme {
   position: relative;
   padding: 11px 35px;
-  background: none;
-  color: #fff;
-  border: 2px solid #fff;
+  background: #ddd;
+  color: #24305e;
+  border: 2px solid #24305e;
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 1px;
@@ -264,6 +277,7 @@ ul.side-nav.fixed a {
   display: block;
   line-height: 100%;
   padding: 10px 0 12px;
+  font-weight: 600;
 }
 
 ul.table-of-contents li.logo a.active, ul.table-of-contents li.logo a:hover {
@@ -343,7 +357,7 @@ h3 {
 } */
 
 #intro.section {
-  background: #a7ffeb repeat;
+  background:rgb(0,0,0,.08);
   position: relative;
 }
 
@@ -363,11 +377,11 @@ h3 {
 } */
 
 #intro.section .container *:not(span) {
-  font-weight: 300;
+  font-weight: 400;
   /* font-weight: 400; */
   line-height: 150%;
   /* padding: 0 0px; */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  /*text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);*/
 }
 
 #intro.section .underline {
@@ -379,7 +393,7 @@ h3 {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.04);
   height: 100%;
   left: 0;
   position: absolute;
@@ -572,7 +586,7 @@ small {
 /* main .teal-text */
 
 .teal-text {
-  color: #008073 !important;
+  color: #0089ec !important;
 }
 
 /* .teal-text {
@@ -582,7 +596,7 @@ small {
 /* .teal */
 
 .teal {
-  background-color: #008073 !important;
+  background-color: #267cb9 !important;
 }
 
 /* .teal {
