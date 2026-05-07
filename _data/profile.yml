@@ -1,61 +1,92 @@
-primary_name: "Your Name"
+primary_name: "Protik Bose Pranto"
 secondary_name: ""
-navbar_name: "Your Name"
+navbar_name: "Protik Bose Pranto"
 
 positions:
-- name: Title or Position
-- name: Affiliation Name
-  logo: /assets/images/badges/MIT_Social_circle.png  # Logo is optional
+- name: Graduate Student Assistant
+- name: Arizona State University
+- logo: /assets/images/badges/MIT_Social_circle.png  # Logo is optional
 
 
-email: "your@email.com"
+email: "ppranto@asu.edu"
 # cv_link: link-to-your-cv-file
-gscholar: xFmQpf4AAAAJ  # This is an example, replace it with your own Google Scholar ID
-github: your_github_id
-twitter: your_twitter_id  # Do not include the '@' symbol
+gscholar: DNIsbSwAAAAJ  # This is an example, replace it with your own Google Scholar ID
+github: ProtikBose
+#twitter: your_twitter_id  # Do not include the '@' symbol
 # wechat_qrcode: /assets/images/etc/wechat.jpg
 # wechat_prompt: >-
 #   Please tell me your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
-# linkedin: your-linked-in-id
+linkedin: protik-bose-pranto
 # orcid: 0000-0000-0000-0000
 
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    A <a href="https://en.wikipedia.org/wiki/Bicolor_cat" target="_blank">bicolor cat</a> is a cat with white fur combined with fur of some other colour, for example solid black, tabby, or colourpointed.
+    I am a PhD student in the Department of Computer Science at <a href="https://www.asu.edu/" target="_blank"
+    class="teal-text hoverline"><b>Arizona State University</b></a> and Graduate Student Assistant in the <a href="https://shadelab.asu.edu/" target="_blank"
+    class="teal-text hoverline"><b>ShaDE Lab</b></a> (advised by <a href="https://search.asu.edu/profile/854979/" target="_blank"
+    class="teal-text hoverline"><b>Dr. Ariane Middel</b></a>).
+  </p>    
+  <p>
+    My research sits at the intersection of geospatial machine learning (GeoAI), urban informatics, and remote sensing, with the goal of enabling more climate-resilient and equitable urban planning. I build end-to-end mapping pipelines that fuse imagery (e.g., NAIP), LiDAR, and open geospatial data to create actionable layers such as pedestrian infrastructure networks and city-scale tree inventories. 
+    Using statistical, spatial, and AI-driven models, I quantify extreme-heat exposure and evaluate how vegetation structure and shade influence pedestrian comfort and neighborhood-scale inequities. More broadly, I enjoy translating core machine learning ideas into scalable, real-world systems that produce tangible decision-support tools for cities.
   </p>
   <p>
-    There are various patterns of a bicolour cat. These range from the Van-patterned (colour on the crown of the head 
-    and the tail only) to a solid colour with a throat locket or medallion. Bicolour coats are found in many cat breeds, 
-    as well as being common in domestic longhair and domestic shorthair cats.
+    I have received my B.Sc (Engg.) in Computer Science and Engineering from <a href="https://www.buet.ac.bd/web/#/" target="_blank"
+    class="teal-text hoverline"><b>Bangladesh University of Engineering and Technology(BUET)</b></a>. I completed my undergraduate thesis under the supervision of Professor <a href="http://saidurrahman.buet.ac.bd/" target="_blank"
+    class="teal-text hoverline"><b>Dr. Md. Saidur Rahman</b></a> on Graph Theory and Algorithms.
+
   </p>
 
-portrait_url: /assets/images/photos/portrait.jpg
+  <p>
+    You can find my <a href="/assets/resume/resume.pdf" target="_blank" class="teal-text hoverline"><b>Resume</b></a> and <a href="/assets/resume/cv.pdf" target="_blank" class="teal-text hoverline"><b>CV</b></a> here.
+  </p>
+
+portrait_url: /assets/images/photos/profile_pic.jpg
 portrait_caption: >-
   Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
 
 education:
-- name: Massachusetts Institute of Technology
-  logo: /assets/images/badges/MIT_Social_circle.png
+- name: Arizona State University
+  logo: /assets/images/badges/ASU-logo.png
   position: >- 
-    Department of Electrical Engineering and Computer Science <br/>
+    Department of Computer Science <br/>
     Ph.D. Student
-  date: Sep. 2024 - present
-- name: Peking University
-  logo: /assets/images/badges/PKU_red.png
-  position: B.S. in Computer Science
-  date: Sep. 2019 - Jul. 2021
-
-# experience:
-# - name: Peking University
-#   logo: /assets/images/badges/PKU_red.png
-#   position: Research Intern
-#   date: Sep. 2019 - Jul. 2021
-
-awards:
-- name: Award Name 2
-  date: 2024
-- name: Award Name 1 
+  date: 2022 - present
+- name: Arizona State University
+  logo: /assets/images/badges/ASU-logo.png
+  position: M.S. in Computer Science
+  date: 2025
+- name: Bangladesh University of Engineering and Technology 
+  logo: /assets/images/badges/buet-logo.png
+  position: B.Sc. in Computer Science and Engineering
   date: 2021
-- name: A quick brown fox jumps over the lazy dog and runs away award
-  date: 2021
+
+experience:
+- name: DLC Resources
+  logo: /assets/images/badges/dlc-resources-logo.png
+  position: GIS Tech Research Intern
+  date: Summer 2026
+
+- name: Graduate Student Assistant
+  logo: /assets/images/badges/dlc-resources-logo.png
+  position: Arizona State University
+  date: Aug 2022 - Present
+
+- name: Consultant
+  logo: /assets/images/badges/dlc-resources-logo.png
+  position: Start Network
+  date: Mar 2022 - Jul 2022
+
+- name: Software Engineer 
+  logo: /assets/images/badges/dlc-resources-logo.png
+  position: Chaldal Engineering
+  date: Mar 2021 - Feb 2022
+
+# awards:
+# - name: Award Name 2
+#   date: 2024
+# - name: Award Name 1 
+#   date: 2021
+# - name: A quick brown fox jumps over the lazy dog and runs away award
+#   date: 2021
