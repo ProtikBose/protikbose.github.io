@@ -1,6 +1,9 @@
 <nav id="page-nav" class="d-none d-lg-block">
     <ul>
         <li><a href="#about" data-target="about"><span class="dot"></span><span class="label">About</span></a></li>
+        {% if site.data.display.homepage.show_projects %}
+        <li><a href="#projects" data-target="projects"><span class="dot"></span><span class="label">Projects</span></a></li>
+        {% endif %}
         {% if site.data.display.homepage.show_experience %}
         <li><a href="#experience" data-target="experience"><span class="dot"></span><span class="label">Experience</span></a></li>
         {% endif %}

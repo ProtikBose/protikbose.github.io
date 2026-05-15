@@ -1,24 +1,19 @@
 ---
-title:          "Pharetra Massa Massa Ultricies Mi Nisl Tincidunt"
-date:           2023-01-21 00:01:00 +0800
+title:          "On 2-interval pairwise compatibility properties of two classes of grid graphs"
+date:           2023-05-21 00:01:00 +0800
 selected:       false
-pub:            "International Conference on Learning Representations (ICLR)"
+pub:            "The Computer Journal"
 pub_date:       "2023"
-semantic_scholar_id: 11ac0b5634a282f1a0da204b98e7473d8b480dfb  # use this to retrieve citation count
+pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Paper</span>'
+#semantic_scholar_id: 11ac0b5634a282f1a0da204b98e7473d8b480dfb  # use this to retrieve citation count
 abstract: >-
-  Photo by Dessy Dimcheva on Unsplash. Please keep the description of your publication as brief as possible. 1~2 sentences is ideal. Otherwise, it will look too noisy. This is a <strong>counterexample</strong> to show how the publication will look like when the abstract is too long.
-  The tangerine is a type of citrus fruit that is orange in color, that is considered either a variety of Citrus reticulata, the mandarin orange, or a closely related species, under the name Citrus tangerina, or yet as a hybrid (Citrus × tangerina) of mandarin orange varieties, with some pomelo contribution.
-  According to the Oxford English Dictionary (OED), the word "tangerine" was originally an adjective meaning "Of or pertaining to, or native of Tangier, a seaport in Morocco, on the Strait of Gibraltar" and "a native of Tangier." The name was first used for fruit coming from Tangier, Morocco, described as a mandarin variety. The OED cites this usage from Addison's The Tatler in 1710 with similar uses from the 1800s. The adjective was applied to the fruit, once known scientifically as "Citrus nobilis var. tangeriana" which grew in the region of Tangiers. This usage appears in the 1800s.
+  A graph $G = (V, E)$ is called a pairwise compatibility graph (PCG) if it admits a tuple $(T, d_{min}, d_{max})$ of an edge-weighted tree $T$ of non-negative edge weights with leaf set $L$, two non-negative real numbers $d_{min} \leq d_{max}$ such that each vertex $u' \in V$ represents a leaf $u \in L$ and $G$ has an edge $(u', v') \in E$ if and only if the distance between the two leaves $u$ and $v$ in the tree $T$ lies within interval $[d_{min}, d_{max}]$. It has been proven that not all graphs are PCGs. A graph $G$ is called a $k$-interval PCG if there exists an edge-weighted tree $T$ and $k$ mutually exclusive intervals of non-negative real numbers such that there is an edge between two vertices in $G$ if and only if the distance between their corresponding leaves in $T$ lies within any of the $k$ intervals. It is known that every graph $G$ is a $k$-interval PCG for $k = |E|$, where $E$ is the set of edges of $G$. It is thus interesting to know the smallest value of $k$ for which $G$ is a $k$-interval PCG. In this paper, we show that grid graphs and a subclass of 3D grid graphs are 2-interval PCGs.
 
-cover:          /assets/images/covers/cover2.jpg
+#cover:          /assets/images/covers/cover2.jpg
 authors:
-  - Charles Green (MIT)*
-  - John Doe*
-  - Robert White
-  - James Wang
-  - Your Name#
+  - Bishal Basak Papan
+  - Protik Bose Pranto
+  - Md Saidur Rahman
 links:
-  Paper: https://www.biorxiv.org
-  Code: https://github.com
-  Unsplash: https://unsplash.com/photos/orange-fruit-on-white-table-cloth-ISX_imp8t1o
+  Link: https://academic.oup.com/comjnl/article-abstract/66/5/1256/6536120
 ---

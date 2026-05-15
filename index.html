@@ -20,6 +20,12 @@ navbar_title: Home
         {% include widgets/debug_repo_name.html %}
         {% include widgets/debug_url.html %}
 
+        {% if site.data.display.homepage.show_projects %}
+        <section id="projects">
+            {% include widgets/project_card.html %}
+        </section>
+        {% endif %}
+
         {% if site.data.display.homepage.show_experience %}
         <section id="experience">
             {% include widgets/experience_card.html %}
@@ -47,3 +53,12 @@ navbar_title: Home
         {% endif %}
     </div>
 </div>
+
+<!-- How to run this in docker?
+
+docker run --rm -it \
+  -v "$PWD:/srv/jekyll" \
+  -p 4000:4000 \
+  -w /srv/jekyll \
+  ruby:3.2 \
+  bash -c "bundle install && bundle exec jekyll serve --host 0.0.0.0 --watch --force_polling" -->

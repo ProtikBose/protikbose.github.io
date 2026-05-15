@@ -1,22 +1,21 @@
 ---
-title:          "Publication without cover image"
-date:           2023-01-1 00:01:00 +0800
+title:          "Exploring Privacy and Security Concerns of EdTech Users: A Qualitative Analysis of User Written Reviews"
+date:           2023-01-05 00:01:00 +0800
 selected:       false
-pub:            "International Conference on Learning Representations (ICLR)"
+pub:            "USENIX Symposium on Usable Privacy and Security (SOUPS)"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
-# pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
+pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Paper Abstract</span>'
 pub_date:       "2023"
-
 abstract: >-
-  When the cover image is not provided, it will generate a random colorful bubble images as the cover image using the <code>bubble_visual_hash.js</code> script.
+  The rapid growth of technology’s use in educational institutes, accompanied by numerous incidents of data breaches as well as data abuse for profit, has raised concerns regarding users’ privacy, security, and safety. Different from other contexts (eg, social media), institutionalized use of technologies rarely offers any option to opt out and involves multiple user groups (eg, students and instructors) with power asymmetries, further complicating the situation. To discover perceptions and concerns from different user groups, we manually analyzed 3,300 online reviews of 33 education technologies. We conducted a thematic analysis of the 163 reviews that expressed concerns about privacy/security harms from the applications and identified five themes. Additionally, we identified 77 reviews (through keyword search and then manual annotations) where users anticipated harm from other users and found one additional theme, totaling six themes.
 # cover:          /assets/images/covers/cover3.jpg
 authors:
-  - Your Name*#
-  - James Wang*
-  - Some Other Name
-  - John Doe
+  - Waqar Hassan Khan
+  - Protik Bose Pranto
+  - Tianyi Yang
+  - Rakibul Hasan
 links:
-  Code: https://github.com/luost26/bubble-visual-hash
-  Demo: https://luost26.github.io/bubble-visual-hash
+  Link: https://www.usenix.org/system/files/soups2023-poster79_khan_abstract_final.pdf
+  Poster: assets/poster/edtech1.pdf
 ---
