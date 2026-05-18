@@ -1,17 +1,29 @@
 ---
 show: true
-width: 4
+width: 8
 date: 2021-09-12 00:01:00 +0800
 height: 295px
 images:
-- src: https://picsum.photos/seed/first1111/800/800
-  title: Photo 1
-  desc: Description 1.
+- src: assets/images/myshowcase/firework_dhaka.jpg
+  #title: Photo 1
+  desc: Fireworks in Dhaka, Bangladesh
   link: https://picsum.photos/
-- src: https://picsum.photos/seed/second22/800/800
-  title: Photo 2
-  desc: Description 2
-- src: https://picsum.photos/seed/third33/800/800
+- src: assets/images/myshowcase/thailand_1.jpg
+  #title: Photo 2
+  desc: Golden Palace, Thailand
+- src: assets/images/myshowcase/dhaka.jpg
+- src: assets/images/myshowcase/ohio.jpg
+  #title: Photo 2
+  desc: Put-in-Bay, OH
+- src: assets/images/myshowcase/nepal_1.jpg
+  #title: Photo 2
+  desc: Kathmandu, Nepal
+- src: assets/images/myshowcase/india_1.jpg
+  #title: Photo 2
+  desc: Manali, India
+- src: assets/images/myshowcase/india_2.jpg
+  #title: Photo 2
+  desc: kashmir, India
 ---
 
 {% include widgets/carousel.html id=page.id images=page.images height=page.height %}
