@@ -1,0 +1,198 @@
+---
+layout: default
+title: Projects
+navbar_title: Projects
+permalink: /projects/
+description: Research projects, papers, code, posters, and awards.
+---
+
+<style>
+  /* ---- Projects page styles ---- */
+  .projects-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem 4rem;
+  }
+  .projects-wrap .page-title {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .projects-wrap .page-subtitle {
+    color: #6c757d;
+    margin-bottom: 2.25rem;
+    font-size: 0.95rem;
+  }
+
+  .project-card {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    padding: 1.4rem 1.5rem;
+    margin-bottom: 1.4rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  }
+  .project-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+    border-color: rgba(0,0,0,0.14);
+  }
+
+  .project-head {
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+  }
+  .project-thumb {
+    flex: 0 0 110px;
+    width: 110px;
+    height: 110px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f4f5f7;
+  }
+  .project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .project-body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .project-title {
+    font-size: 1.18rem;
+    font-weight: 600;
+    margin: 0 0 0.2rem;
+    line-height: 1.35;
+  }
+  .project-meta {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 0.6rem;
+  }
+  .project-meta .dot {
+    margin: 0 0.45rem;
+    opacity: 0.6;
+  }
+  .project-desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #2b2b2b;
+    margin-bottom: 0.85rem;
+  }
+
+  .project-tags {
+    margin-bottom: 0.85rem;
+  }
+  .project-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    padding: 0.18rem 0.55rem;
+    margin: 0 0.3rem 0.3rem 0;
+    border-radius: 999px;
+    background: rgba(0, 150, 136, 0.08);
+    color: #00796b;
+    border: 1px solid rgba(0, 150, 136, 0.18);
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    background: #f6f7f9;
+    border: 1px solid rgba(0,0,0,0.08);
+    color: #2b2b2b !important;
+    text-decoration: none !important;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .project-link:hover {
+    background: rgba(0, 150, 136, 0.08);
+    border-color: rgba(0, 150, 136, 0.35);
+    color: #00796b !important;
+  }
+  .project-link i {
+    font-size: 0.9rem;
+  }
+
+  /* Mobile: stack thumbnail above text */
+  @media (max-width: 575px) {
+    .project-head { flex-direction: column; }
+    .project-thumb {
+      width: 100%;
+      height: 160px;
+      flex-basis: auto;
+    }
+  }
+</style>
+
+<div class="projects-wrap">
+  <h2 class="page-title">Research Projects</h2>
+  <p class="page-subtitle">
+    <!-- A selection of research projects with related papers, code, posters, and awards. -->
+  </p>
+
+  {% if site.data.projects and site.data.projects.size > 0 %}
+    {% for proj in site.data.projects %}
+      <div class="project-card">
+        <div class="project-head">
+
+          {% if proj.image and proj.image != "" %}
+            <div class="project-thumb">
+              <img src="{{ proj.image | relative_url }}" alt="{{ proj.title | escape }}">
+            </div>
+          {% endif %}
+
+          <div class="project-body">
+            <h3 class="project-title">{{ proj.title }}</h3>
+
+            {% if proj.period or proj.venue %}
+              <div class="project-meta">
+                {% if proj.period %}<span>{{ proj.period }}</span>{% endif %}
+                {% if proj.period and proj.venue %}<span class="dot">·</span>{% endif %}
+                {% if proj.venue %}<span>{{ proj.venue }}</span>{% endif %}
+              </div>
+            {% endif %}
+
+            {% if proj.description %}
+              <div class="project-desc">{{ proj.description }}</div>
+            {% endif %}
+
+            {% if proj.tags and proj.tags.size > 0 %}
+              <div class="project-tags">
+                {% for tag in proj.tags %}
+                  <span class="project-tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if proj.links and proj.links.size > 0 %}
+              <div class="project-links">
+                {% for link in proj.links %}
+                  <a class="project-link"
+                     href="{{ link.url }}"
+                     {% if link.url contains '://' %}target="_blank" rel="noopener"{% endif %}>
+                    {% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %}
+                    <span>{{ link.name }}</span>
+                  </a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="text-muted">No projects yet. Add entries to <code>_data/projects.yml</code>.</p>
+  {% endif %}
+</div>

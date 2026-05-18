@@ -1,0 +1,256 @@
+# =====================================================================
+# Professional Activities
+# ---------------------------------------------------------------------
+# Five sections, each is a list of entries.
+# Order in each list = display order (newest first is the convention).
+#
+# Common fields:
+#   year   : (required) "2025" or "2024 - Present"
+#   title  : (required) headline / award name
+#   detail : (optional) one-line context (issuer, venue, role, etc.)
+#   note   : (optional) extra text shown after the detail
+#   url    : (optional) link rendered as [link] — leave "#" for no link
+#   icon   : (optional) Font Awesome class shown before the title
+#
+# Leadership and Service use:
+#   role   : (required) "Coordinator", "Reviewer", etc.
+#   venue  : (required) organization / event
+# =====================================================================
+
+
+# ---------------------------------------------------------------------
+# SCHOLARSHIPS & FELLOWSHIPS
+# ---------------------------------------------------------------------
+scholarships:
+  - year: "2022"
+    title: "SCAI Doctoral Fellowship ($5,000)"
+    detail: "School of Computing and Augmented Intelligence, Arizona State University"
+    note: "Provided to selected incoming Ph.D. students to support advanced research and degree completion"
+    url: "#"
+    icon: "fas fa-graduation-cap"
+
+  - year: "2016 – 2020"
+    title: "General Merit Scholarship"
+    detail: "Bangladesh Government"
+    note: "Outstanding performance in Higher Secondary School Certificate Examination"
+    url: "#"
+    icon: "fas fa-graduation-cap"
+
+  - year: "2016 – 2020"
+    title: "Technical Scholarship"
+    detail: "Bangladesh Government"
+    note: "Complimentary scholarship for regular engineering students"
+    url: "#"
+    icon: "fas fa-graduation-cap"
+
+  - year: "2011 – 2012"
+    title: "General Merit Scholarship"
+    detail: "Bangladesh Government"
+    note: "Outstanding performance in Junior School Certificate Examination"
+    url: "#"
+    icon: "fas fa-graduation-cap"
+
+
+# ---------------------------------------------------------------------
+# AWARDS, GRANTS & HONORS
+# ---------------------------------------------------------------------
+awards:
+  - year: "2026"
+    title: "Finalist"
+    detail: "Three Minute Thesis (3MT) Competition"
+    icon: "fas fa-trophy"
+
+  - year: "2025"
+    title: "GSG Travel Fund ($700)"
+    detail: "Graduate Student Government, Arizona State University"
+    note: "Travel grant to participate in AGU Annual Meeting"
+    icon: "fas fa-trophy"
+
+  - year: "2025"
+    title: "Graduate College Travel Award ($300)"
+    detail: "Arizona State University"
+    note: "Travel grant to participate in AGU Annual Meeting"
+    icon: "fas fa-trophy"
+
+  - year: "2025"
+    title: "SCAI Conference Funding ($250)"
+    detail: "School of Computing and Augmented Intelligence, Arizona State University"
+    note: "Travel grant to participate in AGU Annual Meeting"
+    icon: "fas fa-trophy"
+
+  - year: "2025"
+    title: "CAP-LTER Graduate Grant ($5,000)"
+    detail: "Central Arizona–Phoenix Long-Term Ecological Research (NSF-funded)"
+    note: "Supports my work on LiDAR-based urban tree mapping"
+    icon: "fas fa-trophy"
+
+  - year: "2025"
+    title: "3rd Place (Graduate Category)"
+    detail: "Urban Climate Research Center (UCRC) Poster Event"
+    note: "For: <i>A Systematic Literature Review on Urban Climate Informatics</i>"
+    url: "#"
+    icon: "fas fa-trophy"
+
+  - year: "2025"
+    title: "Runners-up"
+    detail: "SpaceHACK for Sustainability Hackathon"
+    note: "For the urban cultural accessibility project"
+    url: "#"
+    icon: "fas fa-trophy"
+
+  - year: "2023"
+    title: "USENIX'23 Conference Grant ($700)"
+    detail: "USENIX Association"
+    note: "Travel + presentation grant for the disinformation propagation work"
+    url: "#"
+    icon: "fas fa-trophy"
+
+  - year: "2023"
+    title: "Post-CHI Summer School Acceptance"
+    detail: "ACM CHI"
+    note: "Selected based on the private-data / disinformation project"
+    url: "#"
+    icon: "fas fa-trophy"
+
+
+# ---------------------------------------------------------------------
+# TALKS & PRESENTATIONS
+# ---------------------------------------------------------------------
+talks:
+  - year: "2026"
+    kind: "Talk"
+    title: "Walk in the Shade: Citywide Route Maps"
+    detail: "Three Minute Thesis (3MT)"
+    url: "#"
+    icon: "fas fa-display"
+ 
+  - year: "2026"
+    kind: "Poster"
+    title: "Scalable LiDAR-Based Framework for Automated Tree Inventory and Management"
+    detail: "CAP-LTER All-Scientists Meeting and Poster Symposium"
+    url: "#"
+    icon: "fas fa-image"
+ 
+  - year: "2025"
+    kind: "Presentation"
+    title: "WalkNet: A Vision-Based Framework for Mapping Urban Pedestrian Infrastructure"
+    detail: "American Geophysical Union (AGU) Annual Meeting"
+    #url: "https://agu.confex.com/agu/agu25/meetingapp.cgi/Paper/1978276"
+    icon: "fas fa-display"
+ 
+  - year: "2025"
+    kind: "Poster"
+    title: "A Systematic Literature Review on Urban Climate Informatics"
+    detail: "Urban Climate Research Center (UCRC) Poster Event"
+    url: "#"
+    icon: "fas fa-image"
+ 
+  - year: "2023"
+    kind: "Poster"
+    title: "Understanding the Effect of Private Data in Disinformation Propagation"
+    detail: "Symposium on Usable Privacy and Security (SOUPS)"
+    url: "#"
+    icon: "fas fa-image"
+ 
+  - year: "2023"
+    kind: "Poster"
+    title: "Exploring Privacy and Security Concerns of EdTech Users: A Qualitative Analysis of User Written Reviews"
+    detail: "Symposium on Usable Privacy and Security (SOUPS)"
+    url: "#"
+    icon: "fas fa-image"
+ 
+  - year: "2023"
+    kind: "Presentation"
+    title: "Targeted Misinformation based on Personal Data"
+    detail: "ASU CyberSecurity Symposium (ASUCSS)"
+    url: "#"
+    icon: "fas fa-display"
+
+
+# ---------------------------------------------------------------------
+# LEADERSHIP EXPERIENCES
+# ---------------------------------------------------------------------
+leadership:
+  - year: "2024 – Present"
+    role: "Coordinator"
+    venue: "OLsA – Arizona Laboratorians Chapter"
+    note: ""
+    icon: "fas fa-users-line"
+
+  - year: "2023 – Present"
+    role: "Student Representative"
+    venue: "Bangladesh Student Association, Arizona State University"
+    note: ""
+    icon: "fas fa-users-line"
+
+  - year: "2019 – 2020"
+    role: "Organising Member"
+    venue: "Laboratorian Association of BUET"
+    note: ""
+    icon: "fas fa-users-line"
+
+
+# ---------------------------------------------------------------------
+# SERVICE & REVIEWING
+# ---------------------------------------------------------------------
+service:
+  - #year: "2025 – 2026"
+    role: "Peer Reviewer for Papers"
+    venue: "ML4RS 2026, ICECET 2026, ICECCME 2025, ICECET 2025, ACDSA 2025"
+    note: ""
+    icon: "fas fa-pen-to-square"
+ 
+  - #year: "2024"
+    role: "Conference Session Chair"
+    venue: "ICECCME 2024"
+    note: ""
+    icon: "fas fa-chalkboard-user"
+ 
+  - #year: "2023"
+    role: "Invited Talk"
+    venue: "ASU CyberSecurity Symposium"
+    note: ""
+    icon: "fas fa-microphone"
+ 
+  - #year: "2023, 2025"
+    role: "Student Volunteer"
+    venue: "AIES 2025, SOUPS 2023"
+    note: ""
+    icon: "fas fa-hands-helping"
+
+
+# ---------------------------------------------------------------------
+# TEACHING
+# ---------------------------------------------------------------------
+# Teaching assistant roles, guest lectures, mentoring courses.
+# Use 'course' (number + title) and 'description' for the brief summary.
+teaching:
+  - role: "Teaching Assistant"
+    course: "CSE 100 — Principles of Programming with C++"
+    description: "Programming concepts, problem-solving, and program design."
+    icon: "fas fa-chalkboard-user"
+ 
+  - role: "Teaching Assistant"
+    course: "CSE 360 — Introduction to Software Engineering"
+    description: "Software engineering principles such as life-cycle models, development methods, UML, project management, testing, and quality-assurance standards."
+    icon: "fas fa-chalkboard-user"
+ 
+  - role: "Teaching Assistant"
+    course: "CSE 467 — Data and Information Security"
+    description: "Introductory understanding of the technical and behavioral mechanisms for information security and privacy."
+    icon: "fas fa-chalkboard-user"
+ 
+  - role: "Teaching Assistant"
+    course: "CSE 470 — Computer Graphics"
+    description: "Basic concepts of interactive computer graphics, realistic rendering, and 3-D viewing."
+    icon: "fas fa-chalkboard-user"
+ 
+  - role: "Teaching Assistant"
+    course: "CSE 477 — Introduction to Computer-Aided Geometric Design"
+    description: "Basic concepts of 3-D computer geometry, including curves, surfaces, and meshes."
+    icon: "fas fa-chalkboard-user"
+ 
+  - role: "Teaching Assistant"
+    course: "CSE 485 — ASU Capstone Project"
+    description: "Project-based course linking students with industry- and faculty-sponsored projects, cultivating practical experience and preparing them for the professional world."
+    icon: "fas fa-chalkboard-user"

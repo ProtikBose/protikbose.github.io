@@ -91,26 +91,62 @@ section[id] {
 
 <script>
 (function() {
-    const links = document.querySelectorAll('#page-nav a');
-    const sections = Array.from(links).map(link => {
-        const id = link.getAttribute('data-target');
-        return document.getElementById(id);
-    }).filter(Boolean);
+    function init() {
+        const links = document.querySelectorAll('#page-nav a');
+        if (!links.length) return;
 
-    function updateActive() {
-        const scrollPos = window.scrollY + 150;
-        let current = sections[0];
-        sections.forEach(section => {
-            if (section.offsetTop <= scrollPos) {
-                current = section;
-            }
-        });
+        // Resolve sections fresh each time in case DOM changed.
+        function getSections() {
+            return Array.from(links)
+                .map(link => document.getElementById(link.getAttribute('data-target')))
+                .filter(Boolean);
+        }
+
+        function setActive(targetId) {
+            links.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('data-target') === targetId);
+            });
+        }
+
+        function updateActiveFromScroll() {
+            const sections = getSections();
+            if (!sections.length) return;
+            const scrollPos = window.scrollY + 150;
+            let current = sections[0];
+            sections.forEach(section => {
+                if (section.offsetTop <= scrollPos) { current = section; }
+            });
+            if (current) setActive(current.id);
+        }
+
+        // Click: highlight instantly, suppress scroll-spy briefly so
+        // smooth-scroll doesn't overwrite the click target mid-flight.
+        let suppressScrollSpy = false;
+        let suppressTimer = null;
+
         links.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('data-target') === current.id);
+            link.addEventListener('click', () => {
+                const target = link.getAttribute('data-target');
+                setActive(target);
+
+                suppressScrollSpy = true;
+                clearTimeout(suppressTimer);
+                suppressTimer = setTimeout(() => { suppressScrollSpy = false; }, 800);
+            });
         });
+
+        window.addEventListener('scroll', () => {
+            if (!suppressScrollSpy) updateActiveFromScroll();
+        }, { passive: true });
+
+        // Initial state once layout settles.
+        updateActiveFromScroll();
     }
 
-    window.addEventListener('scroll', updateActive);
-    updateActive();
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
 })();
 </script>

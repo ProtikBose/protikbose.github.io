@@ -48,6 +48,11 @@ h1, h2, h3, h4, h5, h6,
     -webkit-backdrop-filter: blur(16px);
 }
 
+.navbar .nav-item.active .nav-link {
+    font-weight: 700;
+    border-bottom: 2px solid currentColor;
+}
+
 .inline-badge {
     height: 16px;
     vertical-align: -10%;

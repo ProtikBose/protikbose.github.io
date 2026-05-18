@@ -7,7 +7,13 @@ pages:
 #   url: /index_layout2
 - name: Publications
   url: /publications
-- name: Blog
-  url: /blog
+- name: Projects
+  url: /projects/
+- name: Activities
+  url: /activities/
+- name: Open Source
+  url: /opensource/
+# - name: Blog
+#   url: /blog
 - name: Showcase
   url: /showcase

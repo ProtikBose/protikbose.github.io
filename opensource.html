@@ -1,0 +1,358 @@
+---
+layout: default
+title: Open Source
+navbar_title: Open Source
+permalink: /opensource/
+description: Datasets, dashboards, and code released as open source.
+---
+
+{% comment %}
+  Page-specific floating section nav (mirrors the homepage page_nav.html
+  widget but uses the section IDs that exist on this page).
+{% endcomment %}
+<nav id="page-nav" class="d-none d-lg-block">
+    <ul>
+        <li><a href="#datasets"   data-target="datasets"><span class="dot"></span><span class="label">Datasets</span></a></li>
+        <li><a href="#dashboards" data-target="dashboards"><span class="dot"></span><span class="label">Dashboards</span></a></li>
+        <li><a href="#repos"      data-target="repos"><span class="dot"></span><span class="label">Code &amp; Repos</span></a></li>
+    </ul>
+</nav>
+
+<style>
+  /* ---- Floating side nav (same look as homepage) ---- */
+  #page-nav { position: fixed; top: 50%; right: 20px; transform: translateY(-50%); z-index: 100; }
+  #page-nav ul { list-style: none; padding: 0; margin: 0; }
+  #page-nav li { margin: 12px 0; }
+  #page-nav a {
+    display: flex; align-items: center; justify-content: flex-end;
+    text-decoration: none; color: #999; transition: color 0.2s ease;
+  }
+  #page-nav a:hover { color: #333; }
+  #page-nav .dot {
+    display: inline-block; width: 10px; height: 10px;
+    border-radius: 50%; background: #ccc;
+    margin-left: 10px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    order: 2;
+  }
+  #page-nav .label {
+    font-size: 0.85rem; margin-right: 10px;
+    order: 1; white-space: nowrap;
+    color: #999; transition: color 0.2s ease;
+  }
+  #page-nav a:hover .label,
+  #page-nav a.active .label { color: #333; font-weight: 500; }
+  #page-nav a:hover .dot,
+  #page-nav a.active .dot { background: #333; transform: scale(1.3); }
+
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 20px; }
+
+  /* ---- Open Source page ---- */
+  .os-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem 4rem;
+  }
+  .os-wrap .page-title {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .os-wrap .page-subtitle {
+    color: #6c757d;
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+  }
+
+  /* Section header — matches /activities/ style */
+  .os-section { margin-bottom: 2.75rem; }
+  .os-section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #00796b;
+    margin: 0 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid rgba(0, 150, 136, 0.18);
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+  .os-section-title i { font-size: 1.05rem; }
+
+  /* Card */
+  .os-card {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    padding: 1.3rem 1.4rem;
+    margin-bottom: 1.2rem;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .os-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+    border-color: rgba(0,0,0,0.14);
+  }
+
+  .os-head {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .os-thumb {
+    flex: 0 0 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f4f5f7;
+  }
+  .os-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .os-body { flex: 1 1 auto; min-width: 0; }
+
+  .os-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.15rem;
+    line-height: 1.35;
+    color: #2b2b2b;
+  }
+  .os-meta {
+    font-size: 0.82rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+  }
+  .os-desc {
+    font-size: 0.93rem;
+    line-height: 1.55;
+    color: #2b2b2b;
+    margin-bottom: 0.75rem;
+  }
+
+  .os-tags { margin-bottom: 0.7rem; }
+  .os-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    padding: 0.15rem 0.5rem;
+    margin: 0 0.25rem 0.25rem 0;
+    border-radius: 999px;
+    background: rgba(0, 150, 136, 0.08);
+    color: #00796b;
+    border: 1px solid rgba(0, 150, 136, 0.18);
+  }
+
+  .os-links { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .os-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    font-size: 0.82rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 8px;
+    background: #f6f7f9;
+    border: 1px solid rgba(0,0,0,0.08);
+    color: #2b2b2b !important;
+    text-decoration: none !important;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .os-link:hover {
+    background: rgba(0, 150, 136, 0.08);
+    border-color: rgba(0, 150, 136, 0.35);
+    color: #00796b !important;
+  }
+  .os-link i { font-size: 0.85rem; }
+
+  @media (max-width: 575px) {
+    .os-head { flex-direction: column; }
+    .os-thumb { width: 100%; height: 150px; flex-basis: auto; }
+  }
+</style>
+
+<div class="os-wrap">
+  <h2 class="page-title">Tools and Resources</h2>
+  <p class="page-subtitle">
+    Datasets, dashboards, and code I have built and made public
+  </p>
+
+  <!-- ============ DATASETS ============ -->
+  {% if site.data.opensource.datasets and site.data.opensource.datasets.size > 0 %}
+    <section id="datasets" class="os-section">
+      <h3 class="os-section-title">
+        <i class="fas fa-database"></i> Datasets
+      </h3>
+      {% for item in site.data.opensource.datasets %}
+        <div class="os-card">
+          <div class="os-head">
+            {% if item.image and item.image != "" %}
+              <div class="os-thumb">
+                <img src="{{ item.image | relative_url }}" alt="{{ item.title | escape }}">
+              </div>
+            {% endif %}
+            <div class="os-body">
+              <h4 class="os-title">{{ item.title }}</h4>
+              {% if item.year %}<div class="os-meta">{{ item.year }}</div>{% endif %}
+              {% if item.description %}<div class="os-desc">{{ item.description }}</div>{% endif %}
+              {% if item.tags and item.tags.size > 0 %}
+                <div class="os-tags">
+                  {% for tag in item.tags %}<span class="os-tag">{{ tag }}</span>{% endfor %}
+                </div>
+              {% endif %}
+              {% if item.links and item.links.size > 0 %}
+                <div class="os-links">
+                  {% for link in item.links %}
+                    {% if link.url and link.url != "#" and link.url != "" %}
+                      <a class="os-link" href="{{ link.url }}"
+                         {% if link.url contains '://' %}target="_blank" rel="noopener"{% endif %}>
+                        {% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %}
+                        <span>{{ link.name }}</span>
+                      </a>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+
+  <!-- ============ DASHBOARDS ============ -->
+  {% if site.data.opensource.dashboards and site.data.opensource.dashboards.size > 0 %}
+    <section id="dashboards" class="os-section">
+      <h3 class="os-section-title">
+        <i class="fas fa-chart-line"></i> Dashboards
+      </h3>
+      {% for item in site.data.opensource.dashboards %}
+        <div class="os-card">
+          <div class="os-head">
+            {% if item.image and item.image != "" %}
+              <div class="os-thumb">
+                <img src="{{ item.image | relative_url }}" alt="{{ item.title | escape }}">
+              </div>
+            {% endif %}
+            <div class="os-body">
+              <h4 class="os-title">{{ item.title }}</h4>
+              {% if item.year %}<div class="os-meta">{{ item.year }}</div>{% endif %}
+              {% if item.description %}<div class="os-desc">{{ item.description }}</div>{% endif %}
+              {% if item.tags and item.tags.size > 0 %}
+                <div class="os-tags">
+                  {% for tag in item.tags %}<span class="os-tag">{{ tag }}</span>{% endfor %}
+                </div>
+              {% endif %}
+              {% if item.links and item.links.size > 0 %}
+                <div class="os-links">
+                  {% for link in item.links %}
+                    {% if link.url and link.url != "#" and link.url != "" %}
+                      <a class="os-link" href="{{ link.url }}"
+                         {% if link.url contains '://' %}target="_blank" rel="noopener"{% endif %}>
+                        {% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %}
+                        <span>{{ link.name }}</span>
+                      </a>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+
+  <!-- ============ CODE & REPOSITORIES ============ -->
+  {% if site.data.opensource.repos and site.data.opensource.repos.size > 0 %}
+    <section id="repos" class="os-section">
+      <h3 class="os-section-title">
+        <i class="fab fa-github"></i> Code &amp; Repositories
+      </h3>
+      {% for item in site.data.opensource.repos %}
+        <div class="os-card">
+          <div class="os-head">
+            {% if item.image and item.image != "" %}
+              <div class="os-thumb">
+                <img src="{{ item.image | relative_url }}" alt="{{ item.title | escape }}">
+              </div>
+            {% endif %}
+            <div class="os-body">
+              <h4 class="os-title">{{ item.title }}</h4>
+              {% if item.year %}<div class="os-meta">{{ item.year }}</div>{% endif %}
+              {% if item.description %}<div class="os-desc">{{ item.description }}</div>{% endif %}
+              {% if item.tags and item.tags.size > 0 %}
+                <div class="os-tags">
+                  {% for tag in item.tags %}<span class="os-tag">{{ tag }}</span>{% endfor %}
+                </div>
+              {% endif %}
+              {% if item.links and item.links.size > 0 %}
+                <div class="os-links">
+                  {% for link in item.links %}
+                    {% if link.url and link.url != "#" and link.url != "" %}
+                      <a class="os-link" href="{{ link.url }}"
+                         {% if link.url contains '://' %}target="_blank" rel="noopener"{% endif %}>
+                        {% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %}
+                        <span>{{ link.name }}</span>
+                      </a>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+
+</div>
+
+<script>
+(function() {
+    const links = document.querySelectorAll('#page-nav a');
+    const sections = Array.from(links).map(link => {
+        const id = link.getAttribute('data-target');
+        return document.getElementById(id);
+    }).filter(Boolean);
+
+    function setActive(targetId) {
+        links.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('data-target') === targetId);
+        });
+    }
+
+    function updateActiveFromScroll() {
+        const scrollPos = window.scrollY + 150;
+        let current = sections[0];
+        sections.forEach(section => {
+            if (section.offsetTop <= scrollPos) { current = section; }
+        });
+        if (current) setActive(current.id);
+    }
+
+    // Click: highlight instantly, then briefly suppress scroll-spy
+    // so smooth-scroll doesn't overwrite the click target.
+    let suppressScrollSpy = false;
+    let suppressTimer = null;
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            const target = link.getAttribute('data-target');
+            setActive(target);
+
+            suppressScrollSpy = true;
+            clearTimeout(suppressTimer);
+            suppressTimer = setTimeout(() => { suppressScrollSpy = false; }, 800);
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        if (!suppressScrollSpy) updateActiveFromScroll();
+    });
+
+    updateActiveFromScroll();
+})();
+</script>

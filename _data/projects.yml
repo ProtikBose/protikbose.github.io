@@ -1,0 +1,168 @@
+# =====================================================================
+# Research Projects
+# ---------------------------------------------------------------------
+# Each entry below is one project card. Order in this file = display order.
+#
+# Fields:
+#   title       : (required) Project name
+#   period      : (optional) e.g. "2024 – Present"
+#   venue       : (optional) Lab / institution / collaborators
+#   description : (required) 2–4 sentence summary (HTML allowed)
+#   image       : (optional) path under assets/, leave blank for text-only card
+#   tags        : (optional) list of short keywords
+#   links       : (optional) list of {name, url, icon}
+#     Icons: fas fa-file-pdf (paper), fab fa-github (code),
+#            fas fa-image (poster), fas fa-trophy (award),
+#            fas fa-video (demo), fas fa-display (slides),
+#            fas fa-globe (website), fas fa-database (dataset)
+#
+# Replace each "#" URL with the real link when you have it.
+# =====================================================================
+
+# ------------------------------------------------------------------
+- title: "Urban Accessibility Research"
+  # period: "2025"
+  # venue: "Independent research"
+  description: >-
+    Investigating how access to essential urban amenities is distributed across 
+    socio-economic and environmental lines. One line of work maps cultural hubs and 
+    deserts across New York City and develops a <b>Socio-Cultural Accessibility Score</b> to 
+    identify underserved and overserved regions. A parallel line examines whether low-income residents living in the hottest census tracts 
+    have meaningful access to public cooling centers during extreme-heat events.
+  image: assets/images/projects/accessibility.png
+  tags:
+    - Urban AI
+    - GeoAI
+    - Explainable AI
+    - Geospatial Analysis
+    - Urban Mobility
+  links:
+    - name: "Paper · Urban AI (ACM SIGSPATIAL) 2025"
+      url: "https://dl.acm.org/doi/abs/10.1145/3764926.3771943"   # TODO: replace with paper / DOI URL
+      icon: fas fa-file-pdf
+    - name: "Runners-up · SpaceHACK for Sustainability 2025"
+      url: "https://www.linkedin.com/posts/protik-bose-pranto_thrilled-to-share-that-our-team-secured-the-ugcPost-7309436622456897536-OYHC/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACJ9178BIIVL6_Jx4y_Qr-ulGde_KdXqKIM"   # TODO: replace with award announcement URL (or remove if none)
+      icon: fas fa-trophy
+
+# ------------------------------------------------------------------
+- title: "Reservoir Dynamics and Hydrological Impacts in the GBMIM Basin"
+  # period: "2024 – Present"
+  # venue: "ShaDE Lab, Arizona State University"
+  description: >-
+    A basin-scale, satellite-based assessment of reservoir behavior and
+    downstream hydrological impacts across the Ganges-Brahmaputra-Meghna-Indus-Mekong (GBMIM)
+    river system. The project builds a 30-year monthly storage time series for
+    more than <b>1,600 reservoirs</b>, pairs each with its upstream catchment and
+    GLDAS-derived hydroclimatic fluxes, and quantifies a <b>Reservoir Impact
+    Factor (RIF)</b> to characterize how dams alter downstream flow. An
+    interactive web portal makes the results explorable for researchers and
+    water-resource decision-makers — see the live project website
+    <a href="https://protikbose.github.io/gbmim-basin-explorer/" target="_blank" rel="noopener" class="teal-text hoverline">here</a>.
+  image: assets/images/projects/river.png
+  tags:
+    - Hydrology
+    - Remote Sensing
+    - Transboundary Rivers
+    - Geospatial Analysis
+    - Dashboard
+  links:
+    - name: "Live Project · GBMIM Basin Explorer"
+      url: "https://protikbose.github.io/gbmim-basin-explorer/"
+      icon: fas fa-globe
+
+# ------------------------------------------------------------------
+- title: "Mapping Urban Pedestrian Infrastructure"
+  # period: "2024 – Present"
+  # venue: "ShaDE Lab, Arizona State University"
+  description: >-
+    Building a scalable and vision-based framework to map urban pedestrian infrastructure (sidewalks, crosswalks, and public access paths) 
+    by integrating street-level imagery, segmentation models, and open geospatial data.
+  image: assets/images/projects/waynet.png
+  tags:
+    - GeoAI
+    - Computer Vision
+    - Street-Level Imagery
+    - Urban Mobility
+  links:
+    - name: "Paper (in review) · J. of Transport Geography"
+      url: "#"   # TODO: add preprint link if available
+      icon: fas fa-file-pdf
+    - name: "Presentation · AGU 2025"
+      url: "https://agu.confex.com/agu/agu25/meetingapp.cgi/Paper/1978276"
+      icon: fas fa-display
+
+# ------------------------------------------------------------------
+# - title: "A Systematic Literature Review on Urban Climate Informatics"
+#   period: "2025"
+#   venue: "ShaDE Lab, Arizona State University"
+#   description: >-
+#     A comprehensive systematic literature review examining the intersection of
+#     urban climate and computer science, with a focus on how computational methods
+#     and data-driven approaches address urban climate challenges. Identified and
+#     analyzed existing gaps in the field.
+#   image: # assets/images/projects/urban-climate-review.png
+#   tags:
+#     - Urban Climate
+#     - Literature Review
+#   links:
+#     - name: "Poster · UCRC 2025"
+#       url: "#"   # TODO: add poster PDF or event page URL
+#       icon: fas fa-image
+#     - name: "3rd Place (Graduate) · UCRC Poster Event 2025"
+#       url: "#"   # TODO: add award link or remove
+#       icon: fas fa-trophy
+
+# ------------------------------------------------------------------
+- title: "LiDAR-Based Urban Tree Mapping"
+  # period: "2024 – Present"
+  # venue: "ShaDE Lab, Arizona State University"
+  description: >-
+    An automated pipeline using LiDAR and ML to create a detailed and georeferenced
+    tree inventory. LiDAR data is classified with NDVI, building, and land-cover
+    layers, followed by individual tree segmentation via GDAL polygonization, clustering 
+    and SAMGeo. Morphological metrics are computed per tree,
+    and trees are classified into <i>mesic</i> and <i>xeric</i> types.
+  image: assets/images/projects/tree_mapping.png
+  tags:
+    - LiDAR
+    - ML
+    - Statistical Analysis
+    - Urban Ecology
+    - Remote Sensing
+  links:
+    - name: "Poster · CAPLTER Annual Event 2026"
+      url: "https://globalfutures.asu.edu/caplter/wp-content/uploads/sites/33/2026/02/Protik_CAPLTER-1.pdf"
+      icon: fas fa-image
+    - name: "CAP-LTER Graduate Grant (NSF-funded)"
+      url: "https://globalfutures.asu.edu/caplter/awarded-grad-grants/"
+      icon: fas fa-trophy
+
+# ------------------------------------------------------------------
+- title: "Satire and Misinformation Detection"
+  # period: "2022 – 2024"
+  # venue: "BUET · CISPA · ASU collaborators"
+  description: >-
+    Developed and evaluated ML models — from traditional classifiers to
+    transformer-based models (BERT, XLM-RoBERTa) — for fake and misleading news
+    detection across multiple domains. SVM achieved <b>86%</b> on small datasets;
+    novel text-augmentation strategies pushed XLM-RoBERTa to <b>97%</b>. BERT
+    applied to Bengali misinformation yielded a <b>97% F1-score</b>.
+  image: assets/images/projects/misinformation.png
+  tags:
+    - NLP
+    - Transformers
+    - Misinformation
+    - Low-resource Languages
+  links:
+    - name: "Paper · ICECCME 2024"
+      url: "https://ieeexplore.ieee.org/abstract/document/10796423"
+      icon: fas fa-file-pdf
+    - name: "Paper · CHI Workshop (Design x Policy) 2023"
+      url: "https://cornell.app.box.com/s/h1442ce40mva2e4mwzfcinka407v7zf6"
+      icon: fas fa-file-pdf
+    - name: "Poster · SOUPS 2023"
+      url: "https://persue-lab-asu.github.io/Publications/Understanding.pdf"
+      icon: fas fa-image
+    - name: "USENIX'23 Grant + post-CHI Summer School"
+      url: "https://www.linkedin.com/posts/protik-bose-pranto_attended-soups23-for-the-very-first-time-activity-7096336379873263616-4UZd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACJ9178BIIVL6_Jx4y_Qr-ulGde_KdXqKIM"   # TODO: announcement / acceptance link or remove
+      icon: fas fa-trophy

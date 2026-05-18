@@ -1,0 +1,271 @@
+---
+layout: default
+title: Professional Activities
+navbar_title: Activities
+permalink: /activities/
+description: Scholarships, awards, talks, leadership, and academic service.
+---
+
+{% comment %}
+  Page-specific floating section nav (mirrors the homepage page_nav.html
+  widget but uses the section IDs that exist on this page).
+{% endcomment %}
+<nav id="page-nav" class="d-none d-lg-block">
+    <ul>
+        <li><a href="#scholarships" data-target="scholarships"><span class="dot"></span><span class="label">Scholarships</span></a></li>
+        <li><a href="#awards"       data-target="awards"><span class="dot"></span><span class="label">Awards</span></a></li>
+        <li><a href="#talks"        data-target="talks"><span class="dot"></span><span class="label">Talks</span></a></li>
+        <li><a href="#teaching"     data-target="teaching"><span class="dot"></span><span class="label">Teaching</span></a></li>
+        <li><a href="#leadership"   data-target="leadership"><span class="dot"></span><span class="label">Leadership</span></a></li>
+        <li><a href="#service"      data-target="service"><span class="dot"></span><span class="label">Service</span></a></li>
+    </ul>
+</nav>
+
+<style>
+  /* ---- Floating side nav (same look as homepage) ---- */
+  #page-nav { position: fixed; top: 50%; right: 20px; transform: translateY(-50%); z-index: 100; }
+  #page-nav ul { list-style: none; padding: 0; margin: 0; }
+  #page-nav li { margin: 12px 0; }
+  #page-nav a {
+    display: flex; align-items: center; justify-content: flex-end;
+    text-decoration: none; color: #999; transition: color 0.2s ease;
+  }
+  #page-nav a:hover { color: #333; }
+  #page-nav .dot {
+    display: inline-block; width: 10px; height: 10px;
+    border-radius: 50%; background: #ccc;
+    margin-left: 10px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    order: 2;
+  }
+  #page-nav .label {
+    font-size: 0.85rem; margin-right: 10px;
+    order: 1; white-space: nowrap;
+    color: #999; transition: color 0.2s ease;
+  }
+  #page-nav a:hover .label,
+  #page-nav a.active .label { color: #333; font-weight: 500; }
+  #page-nav a:hover .dot,
+  #page-nav a.active .dot { background: #333; transform: scale(1.3); }
+
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 20px; }
+
+  /* ---- Professional Activities page ---- */
+  .act-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem 4rem;
+  }
+  .act-wrap .page-title {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .act-wrap .page-subtitle {
+    color: #6c757d;
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+  }
+
+  /* Section header */
+  .act-section { margin-bottom: 2.5rem; }
+  .act-section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #00796b;
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid rgba(0, 150, 136, 0.18);
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+  .act-section-title i { font-size: 1.05rem; }
+
+  /* Numbered list — inline title + description */
+  .act-list {
+    list-style: decimal;
+    padding-left: 1.6rem;
+    margin: 0;
+  }
+  .act-list li {
+    padding: 0.35rem 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #2b2b2b;
+  }
+  .act-list li::marker {
+    color: #6c757d;
+    font-weight: 500;
+  }
+
+  .act-label {
+    font-weight: 700;
+    color: #2b2b2b;
+  }
+  .act-list a {
+    color: #00796b;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(0, 150, 136, 0.5);
+  }
+  .act-list a:hover {
+    border-bottom-color: #00796b;
+  }
+  .act-year-tail { color: #6c757d; }
+
+  @media (max-width: 575px) {
+    .act-wrap { padding: 1.75rem 1rem 3rem; }
+    .act-list { padding-left: 1.3rem; }
+  }
+</style>
+
+<div class="act-wrap">
+  <h2 class="page-title">Professional Activities</h2>
+  <p class="page-subtitle">
+    Scholarships, awards, talks and presentations, leadership, and academic service.
+  </p>
+
+  <!-- ============ SCHOLARSHIPS & FELLOWSHIPS ============ -->
+  {% if site.data.activities.scholarships and site.data.activities.scholarships.size > 0 %}
+    <section id="scholarships" class="act-section">
+      <h3 class="act-section-title">
+        <i class="fas fa-graduation-cap"></i> Scholarships &amp; Fellowships
+      </h3>
+      <ol class="act-list">
+        {% for item in site.data.activities.scholarships %}
+          <li>
+            <span class="act-label">{{ item.title }}</span>{% if item.detail %}, {{ item.detail }}{% endif %}{% if item.note %} — {{ item.note }}{% endif %}{% if item.url and item.url != "#" and item.url != "" %} [<a href="{{ item.url }}" target="_blank" rel="noopener">link</a>]{% endif %}{% if item.year %}<span class="act-year-tail">, {{ item.year }}</span>{% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
+  {% endif %}
+
+  <!-- ============ AWARDS, GRANTS & HONORS ============ -->
+  {% if site.data.activities.awards and site.data.activities.awards.size > 0 %}
+    <section id="awards" class="act-section">
+      <h3 class="act-section-title">
+        <i class="fas fa-trophy"></i> Awards, Grants &amp; Honors
+      </h3>
+      <ol class="act-list">
+        {% for item in site.data.activities.awards %}
+          <li>
+            <span class="act-label">{{ item.title }}</span>{% if item.detail %}, {{ item.detail }}{% endif %}{% if item.note %} — {{ item.note }}{% endif %}{% if item.url and item.url != "#" and item.url != "" %} [<a href="{{ item.url }}" target="_blank" rel="noopener">link</a>]{% endif %}{% if item.year %}<span class="act-year-tail">, {{ item.year }}</span>{% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
+  {% endif %}
+
+  <!-- ============ TALKS & PRESENTATIONS ============ -->
+  {% if site.data.activities.talks and site.data.activities.talks.size > 0 %}
+    <section id="talks" class="act-section">
+      <h3 class="act-section-title">
+        <i class="fas fa-microphone-lines"></i> Talks &amp; Presentations
+      </h3>
+      <ol class="act-list">
+        {% for item in site.data.activities.talks %}
+          <li>
+            <span class="act-label">{% if item.kind %}{{ item.kind }}:{% endif %}</span> “{{ item.title }}”{% if item.detail %}, {{ item.detail }}{% endif %}{% if item.note %} — {{ item.note }}{% endif %}{% if item.url and item.url != "#" and item.url != "" %} [<a href="{{ item.url }}" target="_blank" rel="noopener">link</a>]{% endif %}{% if item.year %}<span class="act-year-tail">, {{ item.year }}</span>{% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
+  {% endif %}
+
+  <!-- ============ TEACHING ============ -->
+  {% if site.data.activities.teaching and site.data.activities.teaching.size > 0 %}
+    <section id="teaching" class="act-section">
+      <h3 class="act-section-title">
+        <i class="fas fa-chalkboard-user"></i> Teaching
+      </h3>
+      <ol class="act-list">
+        {% for item in site.data.activities.teaching %}
+          <li>
+            <span class="act-label">{{ item.course }}</span>{% if item.role %} <span class="act-year-tail">({{ item.role }})</span>{% endif %}{% if item.description %} — {{ item.description }}{% endif %}{% if item.url and item.url != "#" and item.url != "" %} [<a href="{{ item.url }}" target="_blank" rel="noopener">link</a>]{% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
+  {% endif %}
+
+  <!-- ============ LEADERSHIP EXPERIENCES ============ -->
+  {% if site.data.activities.leadership and site.data.activities.leadership.size > 0 %}
+    <section id="leadership" class="act-section">
+      <h3 class="act-section-title">
+        <i class="fas fa-users-line"></i> Leadership Experiences
+      </h3>
+      <ol class="act-list">
+        {% for item in site.data.activities.leadership %}
+          <li>
+            <span class="act-label">{{ item.role }}</span>{% if item.venue %}, {{ item.venue }}{% endif %}{% if item.note and item.note != "" %} — {{ item.note }}{% endif %}{% if item.year %}<span class="act-year-tail">, {{ item.year }}</span>{% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
+  {% endif %}
+
+  <!-- ============ SERVICE & REVIEWING ============ -->
+  {% if site.data.activities.service and site.data.activities.service.size > 0 %}
+    <section id="service" class="act-section">
+      <h3 class="act-section-title">
+        <i class="fas fa-handshake"></i> Service &amp; Reviewing
+      </h3>
+      <ol class="act-list">
+        {% for item in site.data.activities.service %}
+          <li>
+            <span class="act-label">{{ item.role }}</span>{% if item.venue %}, {{ item.venue }}{% endif %}{% if item.note and item.note != "" %} — {{ item.note }}{% endif %}{% if item.year %}<span class="act-year-tail">, {{ item.year }}</span>{% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
+  {% endif %}
+
+</div>
+
+<script>
+(function() {
+    const links = document.querySelectorAll('#page-nav a');
+    const sections = Array.from(links).map(link => {
+        const id = link.getAttribute('data-target');
+        return document.getElementById(id);
+    }).filter(Boolean);
+
+    function setActive(targetId) {
+        links.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('data-target') === targetId);
+        });
+    }
+
+    function updateActiveFromScroll() {
+        const scrollPos = window.scrollY + 150;
+        let current = sections[0];
+        sections.forEach(section => {
+            if (section.offsetTop <= scrollPos) { current = section; }
+        });
+        if (current) setActive(current.id);
+    }
+
+    // Click: highlight instantly, then briefly suppress scroll-spy
+    // so smooth-scroll doesn't overwrite the click target.
+    let suppressScrollSpy = false;
+    let suppressTimer = null;
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            const target = link.getAttribute('data-target');
+            setActive(target);
+
+            suppressScrollSpy = true;
+            clearTimeout(suppressTimer);
+            suppressTimer = setTimeout(() => { suppressScrollSpy = false; }, 800);
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        if (!suppressScrollSpy) updateActiveFromScroll();
+    });
+
+    updateActiveFromScroll();
+})();
+</script>
