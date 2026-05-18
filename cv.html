@@ -1,0 +1,197 @@
+---
+layout: default
+title: CV & Resume
+navbar_title: CV
+permalink: /cv/
+description: Curriculum Vitae and Resume.
+---
+
+<style>
+  .cv-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem 4rem;
+  }
+  .cv-wrap .page-title {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .cv-wrap .page-subtitle {
+    color: #6c757d;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+
+  /* ---- Toggle buttons (CV / Resume) ---- */
+  .cv-toggle {
+    display: inline-flex;
+    background: #f3f4f6;
+    border-radius: 10px;
+    padding: 4px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .cv-toggle button {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 0.5rem 1.25rem;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+  .cv-toggle button:hover { color: #00796b; }
+  .cv-toggle button.active {
+    background: #ffffff;
+    color: #00796b;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  }
+  .cv-toggle button i { font-size: 0.85rem; }
+
+  /* ---- Download button ---- */
+  .cv-actions {
+    display: flex;
+    align-items: center;
+  }
+  .cv-dl {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    background: #00796b;
+    color: #fff !important;
+    text-decoration: none !important;
+    transition: background 0.15s;
+    border: 1px solid #00796b;
+    line-height: 1.2;
+  }
+  .cv-dl:hover { background: #00695c; }
+
+  /* ---- PDF viewer panes ---- */
+  .cv-pane { display: none; }
+  .cv-pane.active { display: block; }
+
+  .cv-viewer {
+    width: 100%;
+    height: 85vh;
+    min-height: 600px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background: #f9f9f9;
+  }
+
+  .cv-fallback {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+  }
+  .cv-fallback a {
+    color: #00796b;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(0, 150, 136, 0.5);
+  }
+  .cv-fallback a:hover { border-bottom-color: #00796b; }
+
+  /* Stack the action row on small screens */
+  @media (max-width: 575px) {
+    .cv-actions { width: 100%; }
+    .cv-dl { width: 100%; justify-content: center; }
+    .cv-viewer { height: 75vh; }
+  }
+</style>
+
+<div class="cv-wrap">
+
+  <h2 class="page-title">CV &amp; Resume</h2>
+  <p class="page-subtitle">
+    You can find my detailed academic CV and two-page summary resume both here. <b>Last updated: {{ site.time | date: "%B %Y" }}.</b>
+  </p>
+
+  <!-- Toggle + download row -->
+  <div class="d-flex flex-wrap align-items-center mb-3" style="gap: 0.75rem;">
+    <div class="cv-toggle" role="tablist">
+      <button type="button" id="cv-tab-cv"     class="active" data-pane="cv"     aria-selected="true">
+        <i class="fas fa-graduation-cap"></i> CV
+      </button>
+      <button type="button" id="cv-tab-resume" data-pane="resume" aria-selected="false">
+        <i class="fas fa-file-lines"></i> Resume
+      </button>
+    </div>
+
+    <!-- <div class="cv-actions">
+      <a id="cv-download" class="cv-dl" href="{{ '/assets/resume/cv.pdf' | relative_url }}" download>
+        <i class="fas fa-download"></i> Download PDF
+      </a>
+    </div> -->
+  </div>
+
+  <!-- CV pane -->
+  <div id="pane-cv" class="cv-pane active">
+    <object class="cv-viewer"
+            data="{{ '/assets/resume/cv.pdf' | relative_url }}#view=FitH"
+            type="application/pdf">
+      <iframe class="cv-viewer"
+              src="{{ '/assets/resume/cv.pdf' | relative_url }}#view=FitH"
+              title="CV PDF">
+      </iframe>
+    </object>
+    <div class="cv-fallback">
+      Can't see the PDF?
+      <a href="{{ '/assets/resume/cv.pdf' | relative_url }}" target="_blank" rel="noopener">Open it in a new tab</a>
+      or use the download button.
+    </div>
+  </div>
+
+  <!-- Resume pane -->
+  <div id="pane-resume" class="cv-pane">
+    <object class="cv-viewer"
+            data="{{ '/assets/resume/resume.pdf' | relative_url }}#view=FitH"
+            type="application/pdf">
+      <iframe class="cv-viewer"
+              src="{{ '/assets/resume/resume.pdf' | relative_url }}#view=FitH"
+              title="Resume PDF">
+      </iframe>
+    </object>
+    <div class="cv-fallback">
+      Can't see the PDF?
+      <a href="{{ '/assets/resume/resume.pdf' | relative_url }}" target="_blank" rel="noopener">Open it in a new tab</a>
+      or use the download button.
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function() {
+    const buttons = document.querySelectorAll('.cv-toggle button');
+    const panes   = document.querySelectorAll('.cv-pane');
+    const dl      = document.getElementById('cv-download');
+
+    // Resolve PDF paths once. Liquid renders the URLs server-side.
+    const pdfs = {
+        cv:     "{{ '/assets/resume/cv.pdf' | relative_url }}",
+        resume: "{{ '/assets/resume/resume.pdf' | relative_url }}"
+    };
+
+    function activate(target) {
+        buttons.forEach(b => {
+            const on = b.dataset.pane === target;
+            b.classList.toggle('active', on);
+            b.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        panes.forEach(p => p.classList.toggle('active', p.id === 'pane-' + target));
+        if (dl) dl.setAttribute('href', pdfs[target]);
+    }
+
+    buttons.forEach(b => {
+        b.addEventListener('click', () => activate(b.dataset.pane));
+    });
+})();
+</script>
