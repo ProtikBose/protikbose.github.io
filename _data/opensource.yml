@@ -80,6 +80,26 @@ dashboards:
         url: "#"   # TODO: GitHub repo URL if public
         icon: "fab fa-github"
 
+  - title: "Geospatial ML Weekly Papers"
+    #year: "2025 – Present"
+    description: >-
+      An automatically updated weekly digest of the latest research papers
+      in geospatial machine learning. The
+      dashboard tracks new work across remote sensing, Earth observation,
+      and spatial deep learning.
+    tags:
+      - Geospatial
+      - Machine Learning
+      - Weekly Digest
+    image:   # assets/images/opensource/walkability-weather.png
+    links:
+      - name: "View Papers"
+        url: "https://github.com/ProtikBose/geospatial-ml-weekly-papers/blob/master/output/geospatial_ml_papers.md"
+        icon: "fas fa-chart-line"
+      - name: "Source"
+        url: "https://github.com/ProtikBose/geospatial-ml-weekly-papers"
+        icon: "fab fa-github"
+
   - title: "Phoenix Walkability Weather Risk"
     #year: "2025 – Present"
     description: >-
