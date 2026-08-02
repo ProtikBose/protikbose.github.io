@@ -2,7 +2,7 @@
 title:          "WayNet: A Semi-Automated Framework for Mapping Urban Pedestrian Infrastructure Using Street-Level Images"
 date:           2026-02-01 00:01:00 +0800
 selected:       False
-pub:            "Journal of Transport Geography"
+pub:            "Journal of Urban Mobility"
 # pub_pre:        "Submitted to "
 pub_post:       ' (Under review)'
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Paper</span>'

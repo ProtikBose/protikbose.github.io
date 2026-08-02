@@ -43,8 +43,11 @@ datasets:
       - Thermal Comfort
     image:   # assets/images/opensource/example-dataset.png
     links:
-      - name: "Download"
-        url: "10.6073/pasta/300ddb6879bab8a5e0208f6df3ed2cc0"
+      - name: "2023-07-19"
+        url: "https://doi.org/10.6073/pasta/db001b995b8100ad96c0ca813e3e303a"
+        icon: "fas fa-database"
+      - name: "2024-06-06"
+        url: "https://doi.org/10.6073/pasta/b25c2e2fcafe68900c7f382a6f95399c"
         icon: "fas fa-database"
       # - name: "Repository"
       #   url: "https://github.com/ProtikBose/example-dataset"
