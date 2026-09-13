@@ -77,7 +77,7 @@ dashboards:
     image:   # assets/images/opensource/gbm-basin.png
     links:
       - name: "Live Dashboard"
-        url: "https://protikbose.github.io/gbmim-basin-explorer/"
+        url: "https://hydrotellisense.github.io/gbmim-basin-explorer/"
         icon: "fas fa-globe"
       - name: "Source"
         url: "#"   # TODO: GitHub repo URL if public
